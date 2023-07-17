@@ -5,9 +5,27 @@ const cookieParser = require('cookie-parser')
 
 const TIIS_URL = "https://api.olahrago.id/api/v2"
 
-// Mengatur EJS sebagai view engine
+import path from 'path';
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+
+const port = process.env.PORT || 6879
+
+//Area
+app.use(express.static('public'))
+app.use(express.json())
+app.use(express.urlencoded())
+
+
+app.set("views", path.join(__dirname, 'views'))
+// set view engine menggunakan EJS
 app.set('view engine', 'ejs');
 
+// Mengatur EJS sebagai view engine
 // Middleware untuk parsing body dari request
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
@@ -121,6 +139,6 @@ app.get("/logout", (req, res) => {
 })
 
 // Menjalankan server
-app.listen(process.env, port || 8090, () => {
+app.listen(port, () => {
     console.log('Server berjalan pada port 3000');
 });
