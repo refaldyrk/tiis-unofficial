@@ -121,6 +121,6 @@ app.get("/logout", (req, res) => {
 })
 
 // Menjalankan server
-app.listen(3000, () => {
+app.listen(process.env, port || 8090, () => {
     console.log('Server berjalan pada port 3000');
 });
