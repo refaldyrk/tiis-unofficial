@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Failed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .fail-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            animation-name: fade-in;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: red;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fail-container">
+        <h1>Login Failed</h1>
+        <p>Anda Akan Diarahkan Ke Login Kembali, Silahkan Periksa Kata Sandi Mu Di TIIS</p>
+    </div>
+    <script>
+        setTimeout(() => {
+            window.location.href = '/'; // Mengalihkan kembali ke halaman login setelah 5 detik
+        }, 5000);
+    </script>
+</body>
+
+</html>

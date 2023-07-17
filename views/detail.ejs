@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Atlet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .profile-picture {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-details {
+            margin-bottom: 20px;
+        }
+
+        .profile-details h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .profile-details p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .anthropometry {
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .anthropometry h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .anthropometry p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-picture">
+            <img src="<%= data.profile_picture %>" alt="Profile Picture">
+        </div>
+
+        <div class="profile-details">
+            <h2>
+                <%= data.full_name %>
+            </h2>
+            <p><strong>Email:</strong>
+                <%= data.email %>
+            </p>
+            <p><strong>Nomor Telepon:</strong>
+                <%= data.phone_number %>
+            </p>
+            <p><strong>Club:</strong>
+                <%= data.ref.club_name %>
+            </p>
+            <p><strong>Tinggi:</strong>
+                <%= data.height %> cm
+            </p>
+            <p><strong>Berat:</strong>
+                <%= data.weight %> kg
+            </p>
+        </div>
+
+        <div class="anthropometry">
+            <h3>Data Antropometri</h3>
+            <p><strong>Tinggi:</strong>
+                <%= data.anthropometry.height %> cm
+            </p>
+            <p><strong>Berat:</strong>
+                <%= data.anthropometry.weight %> kg
+            </p>
+        </div>
+
+        <div>
+            <a href="/card/<%= data.uuid %>" class="btn btn-primary">See Card</a>
+        </div>
+
+        <!-- Tambahkan informasi lain sesuai kebutuhan -->
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
